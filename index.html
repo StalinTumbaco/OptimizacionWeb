@@ -3,50 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sitio No Optimizado</title>
+  <title>Sitio Optimizado</title>
 
-  <!-- Fuentes externas múltiples sin preconexión -->
+  <!-- Preconexión para Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Carga de fuente con font-display: swap para evitar bloqueos -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 
-  <!-- JS bloqueante -->
-  <script src="script.js"></script>
-  <script src="libreria-innecesaria.js"></script>
+  <!-- Estilos minificados -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
     <div class="container">
       <h1>Sitio Web</h1>
-      <p>Este sitio está mal optimizado a propósito</p>
+      <p>Este sitio está optimizado</p>
     </div>
   </header>
 
   <main class="container">
     <section>
-      <h2>📷 Imagen Pesada</h2>
-      <img src="img/tigre.jpg" alt="Imagen sin comprimir ni optimizar" width="1920" height="1080" />
+      <h2>Imagen Optimizada</h2>
+      <img src="img/tigre.webp" alt="Imagen optimizada" width="600" height="400" />
     </section>
 
     <section>
-      <h2>🎥 Iframe Innecesario</h2>
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="560" height="315"></iframe>
-    </section>
-
-    <section>
-      <h2>📝 Contenido de Ejemplo</h2>
+      <h2>Contenido de Ejemplo</h2>
       <p>
-        Este sitio tiene imágenes grandes, carga JavaScript en el head sin defer,
-        usa múltiples fuentes externas, y carga hojas de estilo sin minificar.
+        Este sitio usa imágenes ligeras, carga JavaScript de forma no bloqueante,
+        y usa estilos minificados.
       </p>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>© 2025 Taller de Optimización Web - Ejemplo No Optimizado</p>
+      <p>© 2025 Taller de Optimización Web</p>
     </div>
   </footer>
+
+  <!-- JS con defer para no bloquear el render -->
+  <script src="script.js" defer></script>
 </body>
 </html>
-
